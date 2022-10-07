@@ -25,16 +25,6 @@ from kmk.modules.tapdance import TapDance
 tapdance = TapDance()
 keyboard.modules.append(tapdance)
 # codeblock
-# codeblock
-"""
-Enable Mouse Keys
-This codeblock enables mouse keys to be used on the keyboard.
-"""
-
-from kmk.modules.mouse_keys import MouseKeys
-mousekeys = MouseKeys()
-keyboard.modules.append(mousekeys)
-# codeblock
 # oled
 oled_ext = Oled( OledData(image={0:OledReactionType.LAYER,1:["1.bmp","2.bmp","3.bmp","4.bmp","5.bmp","6.bmp","7.bmp","8.bmp"]}),toDisplay=OledDisplayMode.IMG,flip=False)
 # oled
@@ -53,17 +43,18 @@ keyboard.modules.append(split)
 # encodercount
 # keymap
 # Layer 0 Base
-keyboard.keymap = [ [
+keyboard.keymap = [ 
+[
 KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,    KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,
 KC.ESC,KC.Q,KC.W,KC.F,KC.P,KC.B, KC.J,KC.L,KC.U,KC.Y,KC.SCOLON,KC.NO,
-KC.BSPC,KC.MT(KC.A, KC.LGUI, tap_time=200),KC.MT(KC.R, KC.LALT, tap_time=200),KC.MT(KC.S, KC.LCTRL, tap_time=200),KC.MT(KC.T, KC.LSFT, tap_time=200),KC.G,    KC.M,KC.MT(KC.N, KC.LSFT, tap_time=200),KC.MT(KC.E, KC.LCTRL, tap_time=200),KC.MT(KC.I, KC.LALT, tap_time=200),KC.MT(KC.O, KC.LGUI, tap_time=200),KC.NO,
-KC.DEL,KC.Z,KC.MT(KC.X, KC.RALT, tap_time=200),KC.C,KC.D,KC.V,   KC.MUTE,KC.TD(KC.MPLY,KC.TO(1)),    KC.K,KC.H,KC.COMMA,KC.MT(KC.DOT, KC.RALT, tap_time=200),KC.SLASH,KC.NO,
+KC.BSPC,KC.MT(KC.A,KC.LGUI,tap_time=200),KC.MT(KC.R,KC.LALT,tap_time=200),KC.MT(KC.S,KC.LCTRL,tap_time=200),KC.MT(KC.T, KC.LSFT, tap_time=200),KC.G,    KC.M,KC.MT(KC.N, KC.LSFT, tap_time=200),KC.MT(KC.E, KC.LCTRL, tap_time=200),KC.MT(KC.I, KC.LALT, tap_time=200),KC.MT(KC.O, KC.LGUI, tap_time=200),KC.NO,
+KC.DEL,KC.Z,KC.MT(KC.X,KC.RALT,tap_time=200),KC.C,KC.D,KC.V,   KC.MUTE,KC.TD(KC.MPLY,KC.TO(1)),    KC.K,KC.H,KC.COMMA,KC.MT(KC.DOT,KC.RALT,tap_time=200),KC.SLASH,KC.NO,
 KC.NO,KC.LT(3,KC.ESC),KC.LT(4,KC.TAB),KC.LT(2,KC.SPC),   KC.LT(5,KC.ENT),KC.LT(6,KC.BSPC),KC.LT(7,KC.DEL),KC.NO,
 KC.AUDIO_VOL_UP,KC.AUDIO_VOL_DOWN,
-KC.MEDIA_PREV_TRACK,KC.MEDIA_NEXT_TRACK], 
+KC.MEDIA_PREV_TRACK,KC.MEDIA_NEXT_TRACK],
 # Layer 1 Gaming QWERTY
 [
-KC.ESC,KC.1,KC.2,KC.3,KC.4,KC.5,    KC.6,KC.7,KC.8,KC.9,KC.0,KC.MIN,
+KC.ESC,KC.N1,KC.N2,KC.N3,KC.N4,KC.N5,    KC.N6,KC.N7,KC.N8,KC.N9,KC.N0,KC.MIN,
 KC.TAB,KC.Q,KC.W,KC.E,KC.R,KC.T,    KC.Y,KC.U,KC.I,KC.O,KC.P,KC.BSLASH,
 KC.LSFT,KC.A,KC.S,KC.D,KC.F,KC.G,    KC.H,KC.J,KC.K,KC.L,KC.UP,KC.QUOT,
 KC.LCTL,KC.Z,KC.X,KC.C,KC.V,KC.B,    KC.TRNS,KC.TD(KC.MPLY,KC.TO(0)),    KC.N,KC.M,KC.COMM,KC.LEFT,KC.DOWN,KC.RGHT,
@@ -78,7 +69,7 @@ KC.NO,KC.LGUI,KC.LALT,KC.LCTRL,KC.LSHIFT,KC.NO,   KC.CAPSLOCK,KC.LEFT,KC.DOWN,KC
 KC.NO,KC.NO,KC.RALT,KC.NO,KC.NO,KC.NO,  KC.NO,KC.NO,    KC.INSERT,KC.HOME,KC.PGDOWN,KC.PGUP,KC.END,KC.NO,
 KC.NO,KC.NO,KC.NO,KC.NO,    KC.ENTER,KC.BSPC,KC.DELETE,KC.NO,
 KC.AUDIO_VOL_UP,KC.AUDIO_VOL_DOWN,
-KC.MEDIA_PREV_TRACK,KC.MEDIA_NEXT_TRACK], 
+KC.MEDIA_PREV_TRACK,KC.MEDIA_NEXT_TRACK],
 # Layer 3 Media
 [
 KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,    KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,
