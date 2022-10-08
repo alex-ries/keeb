@@ -25,12 +25,27 @@ from kmk.modules.tapdance import TapDance
 tapdance = TapDance()
 keyboard.modules.append(tapdance)
 # codeblock
+# codeblock
+"""
+Enable Debug
+This codeblock enables debug mode
+"""
+keyboard.debug_enabled = True
+# codeblock
 # oled
 oled_ext = Oled( OledData(image={0:OledReactionType.LAYER,1:["1.bmp","2.bmp","3.bmp","4.bmp","5.bmp","6.bmp","7.bmp","8.bmp"]}),toDisplay=OledDisplayMode.IMG,flip=False)
 # oled
 keyboard.extensions.append(oled_ext)
 # ledmap
-rgb_ext = Rgb_matrix(ledDisplay=[[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255],[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255],[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255],[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255],[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255],[85,0,255],[85,0,255],[85,0,255],[0,255,234],[0,255,234],[85,0,255],[85,0,255],[85,0,255],[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255],[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255]],split=True,rightSide=False,disable_auto_write=True)
+rgb_ext = Rgb_matrix(ledDisplay=[
+[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],    [0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255],
+[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],    [0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255],
+[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],    [0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255],
+[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],    [85,0,255],[85,0,255],    [0,255,234],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255],
+[85,0,255],[85,0,255],[85,0,255],[0,255,234],    [0,255,234],[85,0,255],[85,0,255],[85,0,255],
+# Underglow
+[85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255],    [85,0,255],[0,255,234],[0,255,234],[0,255,234],[0,255,234],[85,0,255]
+],split=True,rightSide=False,disable_auto_write=True)
 # ledmap
 keyboard.extensions.append(rgb_ext)
 # TODO Comment one of these on each side
@@ -46,15 +61,15 @@ keyboard.modules.append(split)
 keyboard.keymap = [ 
 [
 KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,    KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,
-KC.ESC,KC.Q,KC.W,KC.F,KC.P,KC.B, KC.J,KC.L,KC.U,KC.Y,KC.SCOLON,KC.NO,
+KC.ESC,KC.Q,KC.W,KC.F,KC.P,KC.B, KC.J,KC.L,KC.U,KC.Y,KC.QUOT,KC.NO,
 KC.BSPC,KC.MT(KC.A,KC.LGUI,tap_time=200),KC.MT(KC.R,KC.LALT,tap_time=200),KC.MT(KC.S,KC.LCTRL,tap_time=200),KC.MT(KC.T, KC.LSFT, tap_time=200),KC.G,    KC.M,KC.MT(KC.N, KC.LSFT, tap_time=200),KC.MT(KC.E, KC.LCTRL, tap_time=200),KC.MT(KC.I, KC.LALT, tap_time=200),KC.MT(KC.O, KC.LGUI, tap_time=200),KC.NO,
 KC.DEL,KC.Z,KC.MT(KC.X,KC.RALT,tap_time=200),KC.C,KC.D,KC.V,   KC.MUTE,KC.TD(KC.MPLY,KC.TO(1)),    KC.K,KC.H,KC.COMMA,KC.MT(KC.DOT,KC.RALT,tap_time=200),KC.SLASH,KC.NO,
-KC.NO,KC.LT(3,KC.ESC),KC.LT(4,KC.TAB),KC.LT(2,KC.SPC),   KC.LT(5,KC.ENT),KC.LT(6,KC.BSPC),KC.LT(7,KC.DEL),KC.NO,
+KC.NO,KC.LT(3,KC.ESC,tap_time=200),KC.LT(4,KC.TAB,tap_time=200),KC.LT(2,KC.SPC,tap_time=200),   KC.LT(5,KC.ENT,tap_time=200),KC.LT(6,KC.BSPC,tap_time=200),KC.LT(7,KC.DEL,tap_time=200),KC.NO,
 KC.AUDIO_VOL_UP,KC.AUDIO_VOL_DOWN,
 KC.MEDIA_PREV_TRACK,KC.MEDIA_NEXT_TRACK],
 # Layer 1 Gaming QWERTY
 [
-KC.ESC,KC.N1,KC.N2,KC.N3,KC.N4,KC.N5,    KC.N6,KC.N7,KC.N8,KC.N9,KC.N0,KC.MIN,
+KC.ESC,KC.N1,KC.N2,KC.N3,KC.N4,KC.N5,    KC.N6,KC.N7,KC.N8,KC.N9,KC.N0,KC.NO,
 KC.TAB,KC.Q,KC.W,KC.E,KC.R,KC.T,    KC.Y,KC.U,KC.I,KC.O,KC.P,KC.BSLASH,
 KC.LSFT,KC.A,KC.S,KC.D,KC.F,KC.G,    KC.H,KC.J,KC.K,KC.L,KC.UP,KC.QUOT,
 KC.LCTL,KC.Z,KC.X,KC.C,KC.V,KC.B,    KC.TRNS,KC.TD(KC.MPLY,KC.TO(0)),    KC.N,KC.M,KC.COMM,KC.LEFT,KC.DOWN,KC.RGHT,
@@ -94,15 +109,15 @@ KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,    KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,
 KC.NO,KC.LBRC,KC.N7,KC.N8,KC.N9,KC.RBRC,    KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,
 KC.NO,KC.SCLN,KC.N4,KC.N5,KC.N6,KC.EQL,    KC.NO,KC.LSHIFT,KC.LCTRL,KC.LALT,KC.LGUI,KC.NO,
 KC.NO,KC.GRV,KC.N1,KC.N2,KC.N3,KC.BSLS,    KC.NO,KC.NO,    KC.NO,KC.NO,KC.NO,KC.RALT,KC.NO,KC.NO,
-KC.NO,KC.NO,KC.NO,KC.NO,    KC.NO,KC.NO,KC.NO,KC.NO,
+KC.NO,KC.NO,KC.NO,KC.N0,    KC.NO,KC.NO,KC.NO,KC.NO,
 KC.NO,KC.NO,
 KC.NO,KC.NO],
-# Layer 6 Symbols Left
+# Layer 6 Symbols Left 
 [
 KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,    KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,
-KC.NO,KC.NO,KC.AMPR,KC.LT,KC.GT,KC.CIRC,    KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,
-KC.NO,KC.NO,KC.DLR,KC.COLN,KC.SCLN,KC.ASTR,    KC.NO,KC.LSHIFT,KC.LCTRL,KC.LALT,KC.LGUI,KC.NO,
-KC.NO,KC.NO,KC.AT,KC.AT,KC.PIPE,KC.HASH,    KC.NO,KC.NO,    KC.NO,KC.NO,KC.NO,KC.RALT,KC.NO,KC.NO,
+KC.NO,KC.NO,KC.AMPR,KC.LABK,KC.RABK,KC.CIRC,    KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,
+KC.NO,KC.NO,KC.TILD,KC.COLN,KC.SCLN,KC.ASTR,    KC.NO,KC.LSHIFT,KC.LCTRL,KC.LALT,KC.LGUI,KC.NO,
+KC.NO,KC.NO,KC.AT,KC.DLR,KC.PIPE,KC.HASH,    KC.NO,KC.NO,    KC.NO,KC.NO,KC.NO,KC.RALT,KC.NO,KC.NO,
 KC.NO,KC.NO,KC.NO,KC.NO,    KC.NO,KC.NO,KC.NO,KC.NO,
 KC.NO,KC.NO,
 KC.NO,KC.NO],
