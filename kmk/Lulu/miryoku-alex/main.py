@@ -27,10 +27,11 @@ keyboard.modules.append(tapdance)
 # codeblock
 # codeblock
 """
-Enable Debug
-This codeblock enables debug mode
+General support stuff
 """
-keyboard.debug_enabled = True
+keyboard.debug_enabled = False
+MODKEYTM = 250
+LTKEYTM = 180
 # codeblock
 # oled
 oled_ext = Oled( OledData(image={0:OledReactionType.LAYER,1:["1.bmp","2.bmp","3.bmp","4.bmp","5.bmp","6.bmp","7.bmp","8.bmp"]}),toDisplay=OledDisplayMode.IMG,flip=False)
@@ -62,9 +63,9 @@ keyboard.keymap = [
 [
 KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,    KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,KC.NO,
 KC.ESC,KC.Q,KC.W,KC.F,KC.P,KC.B, KC.J,KC.L,KC.U,KC.Y,KC.QUOT,KC.NO,
-KC.BSPC,KC.MT(KC.A,KC.LGUI,tap_time=200),KC.MT(KC.R,KC.LALT,tap_time=200),KC.MT(KC.S,KC.LCTRL,tap_time=200),KC.MT(KC.T, KC.LSFT, tap_time=200),KC.G,    KC.M,KC.MT(KC.N, KC.LSFT, tap_time=200),KC.MT(KC.E, KC.LCTRL, tap_time=200),KC.MT(KC.I, KC.LALT, tap_time=200),KC.MT(KC.O, KC.LGUI, tap_time=200),KC.NO,
-KC.DEL,KC.Z,KC.MT(KC.X,KC.RALT,tap_time=200),KC.C,KC.D,KC.V,   KC.MUTE,KC.TD(KC.MPLY,KC.TO(1)),    KC.K,KC.H,KC.COMMA,KC.MT(KC.DOT,KC.RALT,tap_time=200),KC.SLASH,KC.NO,
-KC.NO,KC.LT(3,KC.ESC,tap_time=200),KC.LT(4,KC.TAB,tap_time=200),KC.LT(2,KC.SPC,tap_time=200),   KC.LT(5,KC.ENT,tap_time=200),KC.LT(6,KC.BSPC,tap_time=200),KC.LT(7,KC.DEL,tap_time=200),KC.NO,
+KC.BSPC,KC.MT(KC.A,KC.LGUI,tap_time=MODKEYTM),KC.MT(KC.R,KC.LALT,tap_time=MODKEYTM),KC.MT(KC.S,KC.LCTRL,tap_time=MODKEYTM),KC.MT(KC.T, KC.LSFT, tap_time=MODKEYTM),KC.G,    KC.M,KC.MT(KC.N, KC.LSFT, tap_time=MODKEYTM),KC.MT(KC.E, KC.LCTRL, tap_time=MODKEYTM),KC.MT(KC.I, KC.LALT, tap_time=MODKEYTM),KC.MT(KC.O, KC.LGUI, tap_time=MODKEYTM),KC.NO,
+KC.DEL,KC.Z,KC.MT(KC.X,KC.RALT,tap_time=MODKEYTM),KC.C,KC.D,KC.V,   KC.MUTE,KC.TD(KC.MPLY,KC.TO(1)),    KC.K,KC.H,KC.COMMA,KC.MT(KC.DOT,KC.RALT,tap_time=MODKEYTM),KC.SLASH,KC.NO,
+KC.NO,KC.LT(3,KC.ESC,tap_time=LTKEYTM),KC.LT(4,KC.TAB,tap_time=LTKEYTM),KC.LT(2,KC.SPC,tap_time=LTKEYTM),   KC.LT(5,KC.ENT,tap_time=LTKEYTM),KC.LT(6,KC.BSPC,tap_time=LTKEYTM),KC.LT(7,KC.DEL,tap_time=LTKEYTM),KC.NO,
 KC.AUDIO_VOL_UP,KC.AUDIO_VOL_DOWN,
 KC.MEDIA_PREV_TRACK,KC.MEDIA_NEXT_TRACK],
 # Layer 1 Gaming QWERTY
