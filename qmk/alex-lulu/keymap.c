@@ -14,6 +14,20 @@ enum layers {
     _FUNC
 };
 
+// Tap Dance declarations
+enum {
+    TD_GAME,
+    TD_BASE
+};
+
+// Tap Dance definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Escape, twice for Caps Lock
+    [TD_GAME] = ACTION_TAP_DANCE_LAYER_MOVE(KC_MPLY, _GAME),
+    [TD_BASE] = ACTION_TAP_DANCE_LAYER_MOVE(KC_MPLY, _BASE)
+};
+
+
 /*
  * Base Mod Taps
  */
@@ -37,8 +51,8 @@ enum layers {
 /*
  * Base Layer Dance
  */
-#define TD_GAME ACTION_TAP_DANCE_LAYER_MOVE(KC_MPLY, _GAME)
-#define TD_BASE ACTION_TAP_DANCE_LAYER_MOVE(KC_MPLY, _BASE)
+// #define TD_GAME ACTION_TAP_DANCE_LAYER_MOVE(KC_MPLY, _GAME)
+// #define TD_BASE ACTION_TAP_DANCE_LAYER_MOVE(KC_MPLY, _BASE)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  /* BASE
@@ -165,7 +179,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [_NUM] = LAYOUT(
   KC_NO,    KC_NO,      KC_NO,      KC_NO,    KC_NO,    KC_NO,                      KC_NO,      KC_NO,      KC_NO,      KC_NO,    KC_NO,      KC_NO,
-  KC_NO,    KC_LBRC,    KC_7,       KC_8,     KC_9,     KC_RPRC,                    KC_NO,      KC_NO,      KC_NO,      KC_NO,    QK_RBT,     KC_NO,
+  KC_NO,    KC_LBRC,    KC_7,       KC_8,     KC_9,     KC_RBRC,                    KC_NO,      KC_NO,      KC_NO,      KC_NO,    QK_RBT,     KC_NO,
   KC_NO,    KC_SCLN,    KC_4,       KC_5,     KC_6,     KC_EQL,                     KC_NO,      KC_LSFT,    KC_LCTL,    KC_LALT,  KC_LGUI,    KC_NO,
   KC_NO,    KC_GRV,     KC_1,       KC_2,     KC_3,     KC_BSLS,  KC_NO,  KC_NO,    KC_NO,      KC_NO,      KC_NO,      KC_NO,    KC_NO,      KC_NO,
                         KC_NO,      KC_NO,    KC_NO,    KC_NO,                      KC_NO,      KC_NO,      KC_NO,      KC_NO
@@ -215,5 +229,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-   return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+   return update_tri_layer_state(state, _BASE, _GAME, _NUM);
 }
