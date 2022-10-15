@@ -22,31 +22,30 @@ enum {
 
 // Tap Dance definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Caps Lock
-    [TD_GAME] = ACTION_TAP_DANCE_LAYER_MOVE(KC_MPLY, _GAME),
-    [TD_BASE] = ACTION_TAP_DANCE_LAYER_MOVE(KC_MPLY, _BASE)
+    [TD_GAME] = ACTION_TAP_DANCE_LAYER_MOVE(_GAME, KC_MPLY),
+    [TD_BASE] = ACTION_TAP_DANCE_LAYER_MOVE(_BASE, KC_MPLY)
 };
 
 
 /*
  * Base Mod Taps
  */
-#define M_AW MT(KC_A,KC_LGUI)
-#define M_RA MT(KC_R,KC_LALT)
-#define M_SC MT(KC_S,KC_LCTRL)
-#define M_TC MT(KC_T,KC_LSFT)
-#define M_XA MT(KC_X,KC_RALT)
-#define M_OW MT(KC_O,KC_LGUI)
-#define M_IA MT(KC_I,KC_LALT)
-#define M_EC MT(KC_E,KC_LCTRL)
-#define M_NC MT(KC_N,KC_LSFT)
-#define M_DOTA MT(KC_DOT,KC_RALT)
-#define LT_ESC LT(KC_ESC, _MEDIA)
-#define LT_TAB LT(KC_TAB, _SYMR)
-#define LT_SPC LT(KC_SPC, _NAV)
-#define LT_DEL LT(KC_DEL, _FUNC)
-#define LT_BSPC LT(KC_BSPC, _SYML)
-#define LT_ENT LT(KC_ENT, _NUM)
+#define M_AW LGUI_T(KC_A)
+#define M_RA LALT_T(KC_R)
+#define M_SC LCTL_T(KC_S)
+#define M_TC LSFT_T(KC_T)
+#define M_XA KC_X
+#define M_OW LGUI_T(KC_O)
+#define M_IA LALT_T(KC_I)
+#define M_EC LCTL_T(KC_E)
+#define M_NC LSFT_T(KC_N)
+#define M_DOTA KC_DOT
+#define LT_ESC LT(_MEDIA, KC_ESC)
+#define LT_TAB LT(_SYMR, KC_TAB)
+#define LT_SPC LT(_NAV, KC_SPC)
+#define LT_DEL LT(_FUNC, KC_DEL)
+#define LT_BSPC LT(_SYML, KC_BSPC)
+#define LT_ENT LT(_NUM, KC_ENT)
 
 /*
  * Base Layer Dance
