@@ -49,12 +49,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define T_GAME TD(TD_GAME)
 #define T_BASE TD(TD_BASE)
 
-/*
- * Base Layer Dance
- */
-// #define TD_GAME ACTION_TAP_DANCE_LAYER_MOVE(KC_MPLY, _GAME)
-// #define TD_BASE ACTION_TAP_DANCE_LAYER_MOVE(KC_MPLY, _BASE)
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  /* BASE
  * ,-----------------------------------------.                    ,-----------------------------------------.
